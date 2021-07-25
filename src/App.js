@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import './App.css';
-import Gif from "./components/Gif";
+import ListOfGifs from "./components/ListOfGifs";
 import getGifs from "./services/getGifs";
 
 const GIFS = ["https://media1.giphy.com/media/13o9x4vjo2DTFe/200.webp?cid=ecf05e47h8lsily3pln2iz8hfh6yhl5jiuf1zqrj3ztogxcv&rid=200.webp&ct=g", "https://media4.giphy.com/media/xNT2CcLjhbI0U/giphy.webp?cid=ecf05e47nnyi8skptsvr3f3cn7lc0gnt5h4ed0cevc6isrhg&rid=giphy.webp&ct=g"];
@@ -18,9 +18,7 @@ useEffect(function(){
   return (
     <div className="App">
       <section className="App-content">
-        {
-        gifs.map( singleGif => <Gif title={singleGif.title} url={singleGif.url} id={singleGif.id} /> )
-        }
+        <ListOfGifs gifs={gifs} />
       <button onClick={() => setGifs(DIFFERENT_GIF)} >Cambiar gifs</button>
       </section>
     </div>
