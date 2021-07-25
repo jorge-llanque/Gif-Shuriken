@@ -4,14 +4,22 @@ import Gif from "./Gif";
 
 export default function ListOfGifs({params}) {
 
+    const [loading, setLoading] = useState(false);
     const { keyword} = params
 
     const [gifs, setGifs] = useState([])
 
     useEffect(function(){
+        setLoading(true)
         getGifs({keyword})
-         .then(gifs => setGifs(gifs))
+         .then(gifs => {
+             setGifs(gifs)
+             setLoading(false)
+            })
+
     }, [keyword])
+
+    if(loading) return <i>Cargando...</i>
 
     return <div>
     {        
