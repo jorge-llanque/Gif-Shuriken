@@ -9,7 +9,7 @@ export default function Home() {
     const [keyword, setKeyword] = useState('');
     const [path, pushLocation] = useLocation()
 
-    const {loading, gifs} = useGifs({keyword: 'superman'})
+    const {loading, gifs} = useGifs()
 
     const handleSubmit = evt => {
         evt.preventDefault()
@@ -25,8 +25,9 @@ export default function Home() {
             <input onChange={handleChange} type="text" value={keyword} />
             <button>Buscar</button>
         </form>
-          <h3 className="App--title" >Los gifs más populares</h3>
+        <h3>Última búsqueda</h3>
           <ListOfGifs gifs={gifs} />
+          <h3 className="App--title" >Los gifs más populares</h3>
           <ul>
               {POPULAR_GIFS.map((popularGif) => (
                   <li key={popularGif} >
