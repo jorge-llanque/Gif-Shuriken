@@ -13,9 +13,10 @@ function App() {
         <Link to="/gif/colombia">Gifs de Colombia</Link>
         <Link to="/gif/ecuador">Gifs de Ecuador</Link>
         <Link to="/gif/brasil">Gifs de Brasil</Link>
+        <Route component={Home} path="/" />
         <Route 
           component={ListOfGifs}
-          path="/gif/:keyword" />
+          path="/search/:keyword" />
       </section>
     </div>
   );
