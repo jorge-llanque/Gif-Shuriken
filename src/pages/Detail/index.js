@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import StaticContext from '../../context/StaticContext'
 
-export default function Detail() {
-    return (
-        <div>
-            <h1>Detail page</h1>
-        </div>
-    )
+export default function Detail({params}) {
+    const context = useContext(StaticContext)
+    console.log(context)
+
+    return <h1>GIF con id {params.id}</h1>
 }

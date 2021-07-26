@@ -8,7 +8,7 @@ const POPULAR_GIFS = ["Matrix", "Chile", "Colombia", "Ecuador"];
 export default function Home() {
     const [keyword, setKeyword] = useState('');
     const [path, pushLocation] = useLocation()
-
+ 
     const {loading, gifs} = useGifs()
 
     const handleSubmit = evt => {

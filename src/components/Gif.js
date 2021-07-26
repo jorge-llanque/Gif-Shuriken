@@ -4,7 +4,7 @@ export default function Gif({title, id, url}){
     return (
         <div>
             <h4>{title}</h4>
-            <img src={url} alt={title} />
+            <img loading='lazy' src={url} alt={title} />
         </div>
     )
 }
