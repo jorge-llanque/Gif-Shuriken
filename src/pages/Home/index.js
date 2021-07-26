@@ -19,6 +19,7 @@ export default function Home() {
         <>
         <form onSubmit={handleSubmit} >
             <input onChange={handleChange} type="text" value={keyword} />
+            <button>Buscar</button>
         </form>
           <h3 className="App--title" >Los gifs más populares</h3>
           <ul>

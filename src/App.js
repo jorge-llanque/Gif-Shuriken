@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import './App.css';
-import ListOfGifs from "./components/ListOfGifs";
-import { Route, Link } from "wouter";
+import { Route } from "wouter";
 import Home from "./pages/Home";
 import Detail from './pages/Detail'
+import SearchResults from "./pages/SearchResults";
 
 function App() {
 
@@ -13,7 +13,7 @@ function App() {
         <h1>App</h1>
         <Route component={Home} path="/" />
         <Route 
-          component={ListOfGifs}
+          component={SearchResults}
           path="/search/:keyword" />
         <Route component={Detail} path="/gif/:id" />
       </section>
