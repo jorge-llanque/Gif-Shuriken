@@ -16,13 +16,13 @@ function App() {
     <div className="App">
       <section className="App-content">
         <h1>App</h1>
+
         <GifsContextProvider>
         <Route component={Home} path="/" />
-        <Route 
-          component={SearchResults}
-          path="/search/:keyword" />
+        <Route component={SearchResults} path="/search/:keyword" />
         <Route component={Detail} path="/gif/:id" />
         </GifsContextProvider>
+      
       </section>
     </div>
     </StaticContext.Provider>
