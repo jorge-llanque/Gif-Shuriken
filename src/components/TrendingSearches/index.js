@@ -9,8 +9,8 @@ export default function LazyTrending(){
   const {isNearScreen, fromRef} = useNearScreen({ distance: '100px' })
 
   return <div ref={fromRef} >
-    <Suspense fallback={null} >
-      {isNearScreen ? <TrendingSearches /> : null }
+    <Suspense fallback={<h1>Cargando...</h1>} >
+      {isNearScreen ? <TrendingSearches /> : <h1>Cargando...</h1> }
     </Suspense>
   </div>
 }
