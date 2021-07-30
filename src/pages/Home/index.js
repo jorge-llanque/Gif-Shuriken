@@ -1,14 +1,13 @@
-import React, {useState} from 'react'
+import React, {useState, useRef} from 'react'
 import { Link, useLocation } from 'wouter';
 import ListOfGifs from 'components/ListOfGifs';
 import TrendingSearches from 'components/TrendingSearches';
 import useGifs from 'hooks/useGifs';
 
-const POPULAR_GIFS = ["Matrix", "Chile", "Colombia", "Ecuador"];
-
 export default function Home() {
     const [keyword, setKeyword] = useState('');
     const [path, pushLocation] = useLocation()
+    const searchInput = useRef()
  
     const {loading, gifs} = useGifs()
 
@@ -17,13 +16,13 @@ export default function Home() {
         pushLocation(`/search/${keyword}`)
     }
 
-    const handleChange = evt => {
-        setKeyword(evt.target.value)
+    const handleChange = () => {
+        setKeyword(searchInput.current.value)
     }
     return (
         <>
         <form onSubmit={handleSubmit} >
-            <input onChange={handleChange} type="text" value={keyword} />
+            <input onChange={handleChange} type="text" value={keyword} ref={searchInput}/>
             <button>Buscar</button>
         </form>
         <div className="List__LastSearching">
