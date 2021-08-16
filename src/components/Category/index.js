@@ -5,7 +5,7 @@ export default function Category({name, options}) {
 
   return (
     <>
-     <h1>{name}</h1> 
+       <h1>{name}</h1> 
      <ul>
        {
          options.map( singleOption =>(
