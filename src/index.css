@@ -26,3 +26,15 @@ a {
 li {
   list-style: none;
 }
+input {
+  outline: none;
+  list-style: none;
+  outline: none;
+}
+textarea:focus, input:focus{
+  outline: none;
+}
+button {
+  list-style: none;
+  outline: none;
+}

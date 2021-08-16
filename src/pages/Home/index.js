@@ -4,6 +4,9 @@ import ListOfGifs from 'components/ListOfGifs';
 import TrendingSearches from 'components/TrendingSearches';
 import useGifs from 'hooks/useGifs';
 import {Helmet} from 'react-helmet'
+import { BsSearch } from 'react-icons/bs'
+import './../styles/Home.css'
+
 
 export default function Home() {
     const [keyword, setKeyword] = useState('');
@@ -21,19 +24,19 @@ export default function Home() {
         setKeyword(searchInput.current.value)
     }
     return (
-        <>
-        <Helmet>
-            <title>Home | Giffy</title>
-        </Helmet>
-        <form onSubmit={handleSubmit} >
-            <input onChange={handleChange} type="text" value={keyword} ref={searchInput}/>
-            <button>Buscar</button>
-        </form>
-        <div className="List__LastSearching">
-            <h3>Última búsqueda</h3>
-            <ListOfGifs gifs={gifs} />
+        <div className="Home">
+            <Helmet>
+                <title>Home | Giffy</title>
+            </Helmet>
+            <form onSubmit={handleSubmit} className="Home__Form">
+                <input onChange={handleChange} type="text" value={keyword} ref={searchInput}/>
+                <button type="button"><BsSearch/></button>
+            </form>
+            <div className="List__LastSearching">
+                <h3>Última búsqueda</h3>
+                <ListOfGifs gifs={gifs} />
+                </div>
+            <TrendingSearches />
             </div>
-          <TrendingSearches />
-        </>
     )
 }
