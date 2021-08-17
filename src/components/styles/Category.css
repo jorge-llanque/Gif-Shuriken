@@ -1,0 +1,21 @@
+.Category {
+  margin: 2rem 0;
+}
+.Category__Title {
+  color: blueviolet;
+  font-size: 2rem;
+}
+.Category__Content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.Category__Content li {
+  background-color: chartreuse;
+  padding: 0.2rem 0.5rem;
+  cursor: pointer;
+}
+.Category__Content a {
+  color: rgb(53, 70, 124);
+  text-transform: uppercase;
+}
