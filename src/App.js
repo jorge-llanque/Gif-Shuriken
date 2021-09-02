@@ -11,7 +11,6 @@ import Layout from './components/Layout';
 function App() {
 
   return (
-    <StaticContext.Provider value={{name: 'midudev', suscribeteAlCanal: true}}>
         <GifsContextProvider>
           <Layout>
           <Route component={Home} path="/" />
@@ -20,7 +19,6 @@ function App() {
           <Route component={NotFound} path="/404" />
         </Layout>
         </GifsContextProvider>
-    </StaticContext.Provider>
   );
 }
 
