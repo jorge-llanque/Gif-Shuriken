@@ -12,7 +12,7 @@ function App() {
     <GifsContextProvider>
       <Layout>
         <Route component={Home} path="/" />
-        <Route component={SearchResults} path="/search/:keyword" />
+        <Route component={SearchResults} path="/search/:keyword/:rating?" />
         <Route component={Detail} path="/gif/:id" />
         <Route component={NotFound} path="/404" />
       </Layout>
