@@ -6,7 +6,7 @@ export default function useNearScreen({ distance = '50px', externalRef, once = t
   const fromRef = useRef()
 
   useEffect(() => {
-    let observer
+    let observer;
     const element = externalRef ? externalRef.current : fromRef.current
 
     const onChange = (entries, observer) => {
@@ -18,6 +18,7 @@ export default function useNearScreen({ distance = '50px', externalRef, once = t
         !once && setShow(false)
       }
     }
+
     observer = new IntersectionObserver(onChange, {
       rootMargin: distance
     })
