@@ -14,7 +14,6 @@ export default function useGifs({keyword} = {keyword: null}) {
 
     useEffect(() => {
         setLoading(true)
-
         getGifs({keyword: keywordToUse})
             .then(gifs => {
                 setGifs(gifs)
