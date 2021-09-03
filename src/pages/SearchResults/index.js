@@ -44,7 +44,7 @@ export default function SearchResults({ params }) {
             <meta name="rating" content="General" />
           </Helmet>
           <header>
-            <SearchForm />
+            <SearchForm initialKeyword={keyword} initialRating={rating} />
           </header>
           <h3>{decodeURI(keyword)}</h3>
           <ListOfGifs gifs={gifs} />
