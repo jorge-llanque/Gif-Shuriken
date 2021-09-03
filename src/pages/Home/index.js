@@ -34,7 +34,7 @@ export default function Home() {
             </Helmet>
             <form onSubmit={handleSubmit} className="Home__Form">
                 <input onChange={handleChange} type="text" value={keyword} ref={searchInput}/>
-                <button type="button"><BsSearch/></button>
+                <button type="submit"><BsSearch/></button>
             </form>
             <div className="List__LastSearching">
                 <h3>Última búsqueda</h3>
