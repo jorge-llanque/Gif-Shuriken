@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import Gif from 'components/Gif'
 import useSingleGif from 'hooks/useSingleGif'
 import { Redirect } from 'wouter'
@@ -9,6 +9,9 @@ export default function Detail({params}) {
 
     const title = gif ? gif.title : ''
 
+    /*
+        ESTE BLOQUE QUE VALIDA LOADING  DEBERÍA IMPLEMENTARLO EN LAS PÁGINAS QUE CONSUMEN DATOS, O TALVEZ COLOCARLO EN UN CUSTOM HOOK
+    */
     if(isLoading){
         return (
         <>
