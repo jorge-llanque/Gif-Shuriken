@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import { useContext, useEffect, useState } from 'react'
 import getGifs from '../services/getGifs'
 import GifsContext from '../context/GifsContext'
 

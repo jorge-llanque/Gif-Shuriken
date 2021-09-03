@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, {useEffect, useRef, useCallback} from 'react'
 import ListOfGifs from 'components/ListOfGifs';
 import useGifs from 'hooks/useGifs';
@@ -11,9 +12,13 @@ export default function SearchResults({params}) {
     const { loading, gifs, setPage } = useGifs({ keyword })
 
     const externalRef = useRef()
-    const {isNearScreen} = useNearScreen({externalRef: loading ? null : externalRef, once: false})
+    console.log(externalRef)
+    const {isNearScreen} = useNearScreen({
+      externalRef: loading ? null : externalRef, 
+      once: false
+    })
 
-    
+
     const title = gifs ? `${gifs.length} resultados de ${keyword}` : ''
 
     const debounceHandleNextPage = useCallback(debounce(

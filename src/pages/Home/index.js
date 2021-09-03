@@ -1,5 +1,6 @@
+/* eslint-disable no-unused-vars */
 import React, {useState, useRef} from 'react'
-import { Link, useLocation } from 'wouter';
+import { useLocation } from 'wouter';
 import ListOfGifs from 'components/ListOfGifs';
 import TrendingSearches from 'components/TrendingSearches';
 import useGifs from 'hooks/useGifs';
@@ -12,8 +13,11 @@ export default function Home() {
     const [keyword, setKeyword] = useState('');
     const [path, pushLocation] = useLocation()
     const searchInput = useRef()
- 
+
     const {loading, gifs} = useGifs()
+    /*
+        IMPLEMENTAR LOADING O SKELETON PARA RENDERIZAR MIENTRAS SE DESCARGAN LOS GIFS
+    */
 
     const handleSubmit = evt => {
         evt.preventDefault()
@@ -37,6 +41,6 @@ export default function Home() {
                 <ListOfGifs gifs={gifs} />
                 </div>
             <TrendingSearches />
-            </div>
+        </div>
     )
 }

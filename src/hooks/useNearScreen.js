@@ -5,10 +5,8 @@ export default function useNearScreen({ distance = '50px', externalRef, once = t
   const [isNearScreen, setShow] = useState(false)
   const fromRef = useRef()
 
-  useEffect(function(){
-  
+  useEffect(() => {
     let observer
-    
     const element = externalRef ? externalRef.current : fromRef.current
 
     const onChange = (entries, observer) => {
