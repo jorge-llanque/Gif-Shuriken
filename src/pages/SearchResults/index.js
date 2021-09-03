@@ -12,7 +12,7 @@ export default function SearchResults({params}) {
     const { loading, gifs, setPage } = useGifs({ keyword })
 
     const externalRef = useRef()
-    console.log(externalRef)
+    
     const {isNearScreen} = useNearScreen({
       externalRef: loading ? null : externalRef, 
       once: false
@@ -25,10 +25,13 @@ export default function SearchResults({params}) {
       () => setPage( prevPage => prevPage + 1 ), 200
     ), [])
 
-    useEffect(function (){
+    useEffect(() => {
       if(isNearScreen) debounceHandleNextPage()
     }, [debounceHandleNextPage, isNearScreen])
     
+    /* 
+      SERÍA BUENO IMPLEMENTAR UN SEGUNDO LOADING MIENTRAS SE VA HACIENDO SCROLL Y SE VAN CARGANDO NUEVOS GIFS
+    */
     return (
         <>
           {loading
