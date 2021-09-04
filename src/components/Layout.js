@@ -1,11 +1,11 @@
 import React from 'react'
-import Header from './Header'
+import Headers from './Headers'
 import './styles/Layout.css'
 
 export default function Layout({children}) {
   return (
     <div className="Layout">
-      <Header />
+      <Headers />
       {children}
     </div>
   )
