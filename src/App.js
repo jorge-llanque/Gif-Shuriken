@@ -6,14 +6,18 @@ import SearchResults from "./pages/SearchResults";
 import { GifsContextProvider } from "./context/GifsContext";
 import NotFound from "pages/NotFound/NotFound";
 import Layout from './components/Layout';
+import Login from 'pages/Login'
 
 function App() {
   return (
     <GifsContextProvider>
       <Layout>
-        <Route component={Home} path="/" />
+        
         <Route component={SearchResults} path="/search/:keyword/:rating?" />
         <Route component={Detail} path="/gif/:id" />
+        <Route path="/login" component={Login}/>
+
+        <Route component={Home} path="/" />
         <Route component={NotFound} path="/404" />
       </Layout>
     </GifsContextProvider>
