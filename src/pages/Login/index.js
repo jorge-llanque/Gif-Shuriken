@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {useLocation} from 'wouter'
+import { useLocation } from 'wouter'
 
 export default function Login() {
   const [username, setUsername] = useState('')
@@ -11,8 +11,17 @@ export default function Login() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <input placeholder="username" onChange={e => setUsername(e.target.value)} value={username}/>
-      <input type="password" placeholder="password" onChange={e => setPassword(e.target.value)} value={password} />
+      <input
+        placeholder='username'
+        onChange={e => setUsername(e.target.value)}
+        value={username}
+      />
+      <input
+        type='password'
+        placeholder='password'
+        onChange={e => setPassword(e.target.value)}
+        value={password}
+      />
       <button>Login</button>
     </form>
   )

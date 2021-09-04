@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from 'wouter'
+import { Link } from 'wouter'
 import './styles.css'
 
 export default function Headers() {
@@ -7,16 +7,11 @@ export default function Headers() {
 
   return (
     <div>
-      {
-        isLogged ?
-          <Link to="/logout">
-            Logout
-          </Link> :
-          <Link to="/login">
-            Login
-          </Link>
-      }
-      
+      {isLogged ? (
+        <Link to='/logout'>Logout</Link>
+      ) : (
+        <Link to='/login'>Login</Link>
+      )}
     </div>
   )
 }
