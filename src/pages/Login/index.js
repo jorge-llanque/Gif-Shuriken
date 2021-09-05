@@ -1,12 +1,20 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import useUser from 'hooks/useUser'
 import { useLocation } from 'wouter'
 
 export default function Login() {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [, navigate] = useLocation()
-  const handleSubmit = () => {
-    navigate('/')
+  const { login, isLogged } = useUser()
+
+  useEffect(() => {
+    if (isLogged) navigate('/')
+  }, [isLogged, navigate])
+
+  const handleSubmit = e => {
+    e.preventDefault()
+    login()
   }
 
   return (
