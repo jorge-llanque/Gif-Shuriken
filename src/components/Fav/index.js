@@ -1,13 +1,11 @@
 import useUser from 'hooks/useUser'
 import React, { useState } from 'react'
-import useLocation from 'wouter/use-location'
 import Modal from 'components/Modal'
 import Login from 'components/Login'
 
 export default function Fav({ id }) {
   const [showModal, setShowModal] = useState(false)
   const { isLogged, addFav, favs } = useUser()
-  const [, navigate] = useLocation()
 
   const isFaved = favs.some(favId => favId === id)
 
