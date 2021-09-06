@@ -24,17 +24,23 @@ export default function Login() {
       )}
       {!isLoginLoading && (
         <form onSubmit={handleSubmit}>
-          <input
-            placeholder='username'
-            onChange={e => setUsername(e.target.value)}
-            value={username}
-          />
-          <input
-            type='password'
-            placeholder='password'
-            onChange={e => setPassword(e.target.value)}
-            value={password}
-          />
+          <label>
+            Username:
+            <input
+              placeholder='username'
+              onChange={e => setUsername(e.target.value)}
+              value={username}
+            />
+          </label>
+          <label>
+            Password:
+            <input
+              type='password'
+              placeholder='password'
+              onChange={e => setPassword(e.target.value)}
+              value={password}
+            />
+          </label>
           <button>Login</button>
         </form>
       )}
