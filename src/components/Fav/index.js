@@ -3,17 +3,23 @@ import React from 'react'
 import useLocation from 'wouter/use-location'
 
 export default function Fav({ id }) {
-  const { isLogged } = useUser()
+  const { isLogged, addFav, favs } = useUser()
   const [, navigate] = useLocation()
+
+  const isFaved = favs.some(favId => favId === id)
 
   const handleClick = () => {
     if (!isLogged) return navigate('/login')
-    alert(id)
+    addFav({ id })
   }
+
+  const [label, emoji] = isFaved
+    ? ['Remove Gif from favorites', 'X']
+    : ['Add Gif to favorites', 'Corazon']
   return (
     <button onClick={handleClick}>
-      <span aria-label='Fav Gif' role='img'>
-        corazon
+      <span aria-label={label} role='img'>
+        {emoji}
       </span>
     </button>
   )

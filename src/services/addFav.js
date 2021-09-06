@@ -19,8 +19,9 @@
 export default function addFav({ id, jwt }) {
   const access = new Promise((res, rej) => {
     setTimeout(() => {
+      const arr = []
       res({
-        favs: ['1', '2'],
+        favs: arr.push(id),
       })
     }, 1000)
   })
