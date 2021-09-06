@@ -2,6 +2,7 @@ import useUser from 'hooks/useUser'
 import React, { useState } from 'react'
 import useLocation from 'wouter/use-location'
 import Modal from 'components/Modal'
+import Login from 'components/Login'
 
 export default function Fav({ id }) {
   const [showModal, setShowModal] = useState(false)
@@ -29,7 +30,11 @@ export default function Fav({ id }) {
           {emoji}
         </span>
       </button>
-      {showModal && <Modal onClose={handleClose}>Hola</Modal>}
+      {showModal && (
+        <Modal onClose={handleClose}>
+          <Login />
+        </Modal>
+      )}
     </>
   )
 }
