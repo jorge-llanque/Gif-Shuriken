@@ -5,7 +5,7 @@ import useLocation from 'wouter/use-location'
 export default function Fav({ id }) {
   const { isLogged, addFav, favs } = useUser()
   const [, navigate] = useLocation()
-
+  console.log(favs)
   const isFaved = favs.some(favId => favId === id)
 
   const handleClick = () => {

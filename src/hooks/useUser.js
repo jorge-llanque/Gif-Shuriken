@@ -33,12 +33,14 @@ export default function useUser() {
   const addFav = useCallback(
     ({ id }) => {
       addFavService({ id, jwt })
-        .then(setFavs(id))
+        .then(data => {
+          setFavs(favs.concat(data))
+        })
         .catch(err => {
           console.log(err)
         })
     },
-    [jwt, setFavs]
+    [jwt, setFavs, favs]
   )
 
   return {
