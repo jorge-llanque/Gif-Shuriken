@@ -11,6 +11,18 @@ export default function Register() {
           username: '',
           password: '',
         }}
+        validate={values => {
+          const errors = {}
+          if (!values.username) {
+            errors.username = 'Required username'
+          }
+          if (!values.password) {
+            errors.password = 'Required password'
+          } else if (values.password.length < 3) {
+            errors.password = 'Length must be greater than 3'
+          }
+          return errors
+        }}
         onSubmit={(values, { setFieldError }) => {
           return register(values).catch(() => {
             setFieldError('username', 'This username is not valid')
@@ -24,15 +36,22 @@ export default function Register() {
               name='username'
               onChange={handleChange}
             />
+            {errors.username && (
+              <small style={{ color: 'red' }}>{errors.username}</small>
+            )}
             <input
+              type='password'
               placeholder='Password'
               name='password'
               onChange={handleChange}
             />
+            {errors.password && (
+              <small style={{ color: 'red' }}>{errors.password}</small>
+            )}
+
             <button type='submit' disabled={isSubmitting} className='btn'>
               Registrarse
             </button>
-            <span style={{ color: 'red' }}>{errors.username || ''}</span>
           </form>
         )}
       </Formik>
