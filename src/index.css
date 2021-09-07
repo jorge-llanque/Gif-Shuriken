@@ -29,10 +29,15 @@ input {
   list-style: none;
   outline: none;
 }
-textarea:focus, input:focus{
+textarea:focus,
+input:focus {
   outline: none;
 }
 button {
   list-style: none;
   outline: none;
+}
+.btn[disabled] {
+  opacity: 0.3;
+  pointer-events: none;
 }

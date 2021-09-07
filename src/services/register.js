@@ -21,9 +21,5 @@ export default function login({ username, password }) {
     }, 1000)
   })
 
-  return access.then(res => {
-    console.log(res)
-    const { jwt } = res
-    return true
-  })
+  return access.then(() => true)
 }
