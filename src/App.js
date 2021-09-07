@@ -8,6 +8,7 @@ import { UserContextProvider } from 'context/UserContext'
 import NotFound from 'pages/NotFound/NotFound'
 import Layout from './components/Layout'
 import Login from 'pages/Login'
+import Register from 'pages/Register'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route component={SearchResults} path='/search/:keyword/:rating?' />
           <Route component={Detail} path='/gif/:id' />
           <Route path='/login' component={Login} />
+          <Route path='/register' component={Register} />
 
           <Route component={Home} path='/' />
           <Route component={NotFound} path='/404' />

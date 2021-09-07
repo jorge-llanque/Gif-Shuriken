@@ -18,7 +18,10 @@ export default function Headers() {
         Logout
       </Link>
     ) : (
-      <Link to='/login'>Login</Link>
+      <>
+        <Link to='/login'>Login</Link>
+        <Link to='/register'>Register</Link>
+      </>
     )
   }
 
