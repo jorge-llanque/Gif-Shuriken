@@ -1,7 +1,8 @@
 import useUser from 'hooks/useUser'
 import React from 'react'
 import { Link, useRoute } from 'wouter'
-import './styles.css'
+import logo from '../../assets/logo.png'
+import '../styles/Header.css'
 
 export default function Headers() {
   const { isLogged, logout } = useUser()
@@ -19,8 +20,13 @@ export default function Headers() {
       </Link>
     ) : (
       <>
-        <Link to='/login'>Login</Link>
-        <Link to='/register'>Register</Link>
+        <div className='Header'>
+          <Link to='/'>
+            <img src={logo} className='Header__Logo' alt='shuriken logo' />
+          </Link>
+          <Link to='/login'>Login</Link>
+          <Link to='/register'>Register</Link>
+        </div>
       </>
     )
   }
