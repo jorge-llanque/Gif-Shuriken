@@ -15,9 +15,14 @@ export default function Headers() {
 
   const renderLoginButtons = ({ isLogged }) => {
     return isLogged ? (
-      <Link to='#' onClick={handleClick}>
-        Logout
-      </Link>
+      <div className='Header'>
+        <Link to='/'>
+          <img src={logo} className='Header__Logo' alt='shuriken logo' />
+        </Link>
+        <Link to='#' onClick={handleClick}>
+          Logout
+        </Link>
+      </div>
     ) : (
       <>
         <div className='Header'>

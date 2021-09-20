@@ -28,7 +28,7 @@ export default function Fav({ id }) {
     : ['Add Gif to favorites', <FaHeart className='Fav-white' />]
   return (
     <>
-      <button onClick={handleClick}>
+      <button onClick={handleClick} className='Fav-button'>
         <span aria-label={label} role='img'>
           {emoji}
         </span>

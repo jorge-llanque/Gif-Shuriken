@@ -1,6 +1,7 @@
 import React from 'react'
 import { Formik } from 'formik'
 import register from 'services/register'
+import '../styles/Form.css'
 
 export default function Register() {
   return (
@@ -30,26 +31,38 @@ export default function Register() {
         }}
       >
         {({ errors, handleSubmit, handleChange, isSubmitting }) => (
-          <form onSubmit={handleSubmit}>
-            <input
-              placeholder='Username'
-              name='username'
-              onChange={handleChange}
-            />
+          <form onSubmit={handleSubmit} className='form-login-register'>
+            <label className='form-label'>
+              Username:
+              <input
+                className='form-input'
+                placeholder='Username'
+                name='username'
+                onChange={handleChange}
+              />
+            </label>
             {errors.username && (
               <small style={{ color: 'red' }}>{errors.username}</small>
             )}
-            <input
-              type='password'
-              placeholder='Password'
-              name='password'
-              onChange={handleChange}
-            />
+            <label className='form-label'>
+              Password:
+              <input
+                className='form-input'
+                type='password'
+                placeholder='Password'
+                name='password'
+                onChange={handleChange}
+              />
+            </label>
             {errors.password && (
               <small style={{ color: 'red' }}>{errors.password}</small>
             )}
 
-            <button type='submit' disabled={isSubmitting} className='btn'>
+            <button
+              type='submit'
+              disabled={isSubmitting}
+              className='btn form-button'
+            >
               Registrarse
             </button>
           </form>

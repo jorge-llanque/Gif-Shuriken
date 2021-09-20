@@ -3,12 +3,12 @@
   height: 5rem;
   background-color: rgb(85 79 214);
   display: flex;
-  justify-content: center;
   align-items: center;
 }
 .Header__Logo {
   width: 15rem;
   cursor: pointer;
+  margin: 0 auto;
 }
 a {
   display: flex;
