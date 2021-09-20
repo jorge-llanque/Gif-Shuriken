@@ -1,7 +1,9 @@
 .Gif {
-  display: grid;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   overflow: hidden;
+  background-color: aqua;
 }
 .Gif__Title {
   color: rgb(202, 201, 201);
@@ -17,8 +19,12 @@
   width: 100%;
   height: 100%;
 }
-.Gif img{
+.Gif img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.Gif--link {
+  display: flex;
+  flex-direction: column;
 }

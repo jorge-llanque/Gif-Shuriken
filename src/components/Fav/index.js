@@ -2,6 +2,8 @@ import useUser from 'hooks/useUser'
 import React, { useState } from 'react'
 import Modal from 'components/Modal'
 import Login from 'components/Login'
+import { FaHeart } from 'react-icons/fa'
+import '../styles/Fav.css'
 
 export default function Fav({ id }) {
   const [showModal, setShowModal] = useState(false)
@@ -22,8 +24,8 @@ export default function Fav({ id }) {
   }
 
   const [label, emoji] = isFaved
-    ? ['Remove Gif from favorites', 'X']
-    : ['Add Gif to favorites', 'Corazon']
+    ? ['Remove Gif from favorites', <FaHeart className='Fav-red' />]
+    : ['Add Gif to favorites', <FaHeart className='Fav-white' />]
   return (
     <>
       <button onClick={handleClick}>
